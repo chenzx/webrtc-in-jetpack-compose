@@ -38,6 +38,7 @@ fun Application.module(testing: Boolean = false) {
                 for (frame in incoming) {
                     when (frame) {
                         is Frame.Text -> {
+                            println("got frame: $frame.readText()")
                             SessionManager.onMessage(sessionID, frame.readText())
                         }
 
